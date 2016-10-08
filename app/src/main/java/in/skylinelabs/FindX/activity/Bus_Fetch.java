@@ -263,7 +263,7 @@ public class Bus_Fetch extends ActionBarActivity implements android.location.Loc
             }
         });
 
-        map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+        /*map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
 
@@ -286,7 +286,7 @@ public class Bus_Fetch extends ActionBarActivity implements android.location.Loc
 
                 return false;
             }
-        });
+        });*/
 
 
         map.setOnCameraChangeListener(this);
