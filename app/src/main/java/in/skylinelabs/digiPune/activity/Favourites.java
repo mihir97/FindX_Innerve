@@ -33,22 +33,16 @@ import in.skylinelabs.digiPune.R;
 
 
 public class Favourites extends ActionBarActivity implements FragmentDrawer.FragmentDrawerListener {
-	
+
+	private static final String favourites = "http://www.skylinelabs.in/Geo/favourite.php";
 	FloatingActionButton btn;
 	EditText edt1, edt2, edt3, edt4;
 	String one,two,three,four,name;
-	
-	private ProgressDialog pDialog;
 	JSONParser jsonParser = new JSONParser();
-
+	AlertDialog alertDialog;
+	private ProgressDialog pDialog;
 	private Toolbar mToolbar;
 	private FragmentDrawer drawerFragment;
-
-	AlertDialog alertDialog;
-
-
-
-	private static final String favourites = "http://www.skylinelabs.in/Geo/favourite.php";
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -65,7 +59,7 @@ public class Favourites extends ActionBarActivity implements FragmentDrawer.Frag
 				getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
 		drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
 		drawerFragment.setDrawerListener(this);
-		displayView(8);
+		displayView(7);
 
         edt1 = (EditText)  findViewById(R.id.editText1);
         edt2 = (EditText)  findViewById(R.id.editText2);
@@ -183,6 +177,47 @@ public class Favourites extends ActionBarActivity implements FragmentDrawer.Frag
 		}
 	}
 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.menu_log_in, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+
+		if (id == R.id.info) {
+			AlertDialog.Builder alertadd = new AlertDialog.Builder(
+					this);
+			LayoutInflater factory = LayoutInflater.from(this);
+
+			final View view = factory.inflate(R.layout.dialog_main, null);
+
+			ImageView image = (ImageView) view.findViewById(R.id.imageView);
+			image.setImageResource(R.drawable.sos_help);
+
+			alertadd.setView(view);
+
+
+			alertadd.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+
+				public void onClick(DialogInterface dlg, int sumthin) {
+
+				}
+			});
+			alertDialog = alertadd.create();
+			alertDialog.show();
+
+
+		}
+
+		return super.onOptionsItemSelected(item);
+	}
 
 	class CreateNewProduct extends AsyncTask<String, String, String> {
 
@@ -196,28 +231,27 @@ public class Favourites extends ActionBarActivity implements FragmentDrawer.Frag
 				pDialog.setCancelable(false);
 				pDialog.show();
 			}
-			
-			
-			
-			protected String doInBackground(String... args) {
-				
-				
-				final String PREFS_NAME = "GeoPreferences";
+
+
+		protected String doInBackground(String... args) {
+
+
+			final String PREFS_NAME = "GeoPreferences";
 				SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-					
-				
-				List<NameValuePair> params = new ArrayList<NameValuePair>();
+
+
+			List<NameValuePair> params = new ArrayList<NameValuePair>();
 				params.add(new BasicNameValuePair("fav_1", one));
 				params.add(new BasicNameValuePair("fav_2", two));
 				params.add(new BasicNameValuePair("fav_3",three));
 				params.add(new BasicNameValuePair("fav_4",four));
 				params.add(new BasicNameValuePair("user_name",name));
-				 
+
 										try {
 
 											 JSONObject json = jsonParser.makeHttpRequest(favourites,
 														"GET", params);
-										
+
 											 	settings.edit().putString("fav_1", one).commit();
 												settings.edit().putString("fav_2", two).commit();
 												settings.edit().putString("fav_3", three).commit();
@@ -242,8 +276,8 @@ public class Favourites extends ActionBarActivity implements FragmentDrawer.Frag
 												}
 
 											});
-										} 
-									
+										}
+
 									catch (Exception e1) {
 										runOnUiThread(new Runnable() {
 											//
@@ -270,53 +304,10 @@ public class Favourites extends ActionBarActivity implements FragmentDrawer.Frag
 										});
 
 										}
-	
-										
-				return null;					
+
+
+			return null;
 				}
-	 }
-
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.menu_log_in, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-
-		if(id == R.id.info) {
-			AlertDialog.Builder alertadd = new AlertDialog.Builder(
-					this);
-			LayoutInflater factory = LayoutInflater.from(this);
-
-			final View view = factory.inflate(R.layout.dialog_main, null);
-
-			ImageView image = (ImageView) view.findViewById(R.id.imageView);
-			image.setImageResource(R.drawable.sos_help);
-
-			alertadd.setView(view);
-
-
-			alertadd.setPositiveButton("ok", new DialogInterface.OnClickListener() {
-
-				public void onClick(DialogInterface dlg, int sumthin) {
-
-				}
-			});
-			alertDialog =  alertadd.create();
-			alertDialog.show();
-
-
-		}
-
-		return super.onOptionsItemSelected(item);
 	}
 	 
 }

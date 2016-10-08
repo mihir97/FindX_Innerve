@@ -55,7 +55,7 @@ public class SOS_Contacts extends ActionBarActivity implements FragmentDrawer.Fr
 				getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
 		drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
 		drawerFragment.setDrawerListener(this);
-		displayView(7);
+		displayView(6);
 
 		edt1 = (EditText)  findViewById(R.id.editText1);
         edt2 = (EditText)  findViewById(R.id.editText2);

@@ -735,6 +735,12 @@ public class Bus_Fetch extends ActionBarActivity implements android.location.Loc
             }
             return null;
         }
+
+        @Override
+        protected void onPostExecute(String s) {
+            markerp.setVisibility(View.GONE);
+            super.onPostExecute(s);
+        }
     }
 
 
@@ -834,6 +840,12 @@ public class Bus_Fetch extends ActionBarActivity implements android.location.Loc
                 });
             }
             return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            markerp.setVisibility(View.GONE);
+            super.onPostExecute(s);
         }
     }
 
@@ -938,6 +950,12 @@ public class Bus_Fetch extends ActionBarActivity implements android.location.Loc
                 });
             }
             return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            markerp.setVisibility(View.GONE);
+            super.onPostExecute(s);
         }
     }
 

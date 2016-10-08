@@ -35,30 +35,18 @@ import in.skylinelabs.digiPune.R;
 public class Setting extends ActionBarActivity implements FragmentDrawer.FragmentDrawerListener {
 
 
+    AlertDialog alertDialog;
+    FloatingActionButton redo;
+    Switch bck, upd, hst, doupdt, onDty;
+    String user_name;
+    String category;
+    WebView webView;
+    View.OnClickListener snackaction;
+    Boolean firsttime = true;
+    ProgressBar prgbr;
+    Spinner cat;
     private Toolbar mToolbar;
     private FragmentDrawer drawerFragment;
-
-    AlertDialog alertDialog;
-
-    FloatingActionButton redo;
-
-    Switch bck, upd, hst, doupdt, onDty;
-
-    String user_name;
-
-    String category;
-
-
-    WebView webView;
-
-    View.OnClickListener snackaction;
-
-    Boolean firsttime = true;
-
-    ProgressBar prgbr;
-
-    Spinner cat;
-
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -167,7 +155,7 @@ public class Setting extends ActionBarActivity implements FragmentDrawer.Fragmen
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
         drawerFragment.setDrawerListener(this);
-        displayView(6);
+        displayView(5);
 
         redo = (FloatingActionButton) findViewById(R.id.redo);
         redo.setOnClickListener(new View.OnClickListener() {
