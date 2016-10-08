@@ -889,13 +889,6 @@ public class Location_event extends ActionBarActivity implements GoogleApiClient
                 }
                 break;
 
-            case 10:
-                finish();
-                i = new Intent(this, Privacypolicy.class);
-                startActivity(i);
-                title ="Privacy";
-                break;
-
             default:
                 break;
         }

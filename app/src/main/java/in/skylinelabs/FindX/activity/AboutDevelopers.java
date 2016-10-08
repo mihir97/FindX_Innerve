@@ -252,12 +252,6 @@ public class AboutDevelopers extends ActionBarActivity implements FragmentDrawer
                 }
                 break;
 
-            case 10:
-                finish();
-                i = new Intent(this, Privacypolicy.class);
-                startActivity(i);
-                title ="Privacy";
-                break;
 
             default:
                 break;
