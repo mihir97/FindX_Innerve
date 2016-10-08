@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class DemoPagerAdapter extends FragmentPagerAdapter {
 
-    private int pagerCount = 5;
+    private int pagerCount = 4;
 
     private Random random = new Random();
 

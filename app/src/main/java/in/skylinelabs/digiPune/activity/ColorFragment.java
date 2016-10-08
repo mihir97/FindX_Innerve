@@ -14,6 +14,10 @@ public class ColorFragment extends Fragment {
     private static final String ARG_INT = "position";
     private int mColor, pos;
 
+    public ColorFragment() {
+
+    }
+
     public static ColorFragment newInstance(int param1, int param2) {
         ColorFragment fragment = new ColorFragment();
         Bundle args = new Bundle();
@@ -22,10 +26,6 @@ public class ColorFragment extends Fragment {
 
         fragment.setArguments(args);
         return fragment;
-    }
-
-    public ColorFragment() {
-
     }
 
     @Override
@@ -46,22 +46,17 @@ public class ColorFragment extends Fragment {
             return v;
         }
         if (pos == 1) {
-            View v = inflater.inflate(R.layout.intro_2, container, false);
+            View v = inflater.inflate(R.layout.intro_5, container, false);
             v.setBackgroundColor(mColor);
             return v;
         }
         if (pos == 2) {
-            View v = inflater.inflate(R.layout.intro_3, container, false);
+            View v = inflater.inflate(R.layout.intro_2, container, false);
             v.setBackgroundColor(mColor);
             return v;
         }
         if (pos == 3) {
             View v = inflater.inflate(R.layout.intro_4, container, false);
-            v.setBackgroundColor(mColor);
-            return v;
-        }
-        if (pos == 4) {
-            View v = inflater.inflate(R.layout.intro_5, container, false);
             v.setBackgroundColor(mColor);
             return v;
         }
