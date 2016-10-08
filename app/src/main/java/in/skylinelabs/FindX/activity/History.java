@@ -31,7 +31,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.github.clans.fab.FloatingActionButton;
 import com.google.android.gms.location.LocationListener;
 
 import in.skylinelabs.FindX.R;
@@ -53,13 +52,13 @@ public class History extends ActionBarActivity implements FragmentDrawer.Fragmen
 	String URL = "http://skylinelabs.in/Geo/history.php";
 
 	ProgressBar prgbr;
-	FloatingActionButton btn1;
 	EditText edttxt1;
-	String user, number;
+	String user;
 	WebView webView;
 
 	private Toolbar mToolbar;
 	private FragmentDrawer drawerFragment;
+
 
 	@Override 
 	public void onCreate(Bundle savedInstanceState) {

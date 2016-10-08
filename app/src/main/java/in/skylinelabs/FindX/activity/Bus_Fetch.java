@@ -714,7 +714,7 @@ public class Bus_Fetch extends ActionBarActivity implements android.location.Loc
                                 mrkgrp[i].setVisible(false);
                                 mrkgrp[i].setPosition(new LatLng(Double.parseDouble(coordinates.getString("latitude")), Double.parseDouble(coordinates.getString("longitude"))));
                                 mrkgrp[i].setTitle("From :" + coordinates.getString("start") + "  " + "To :" + coordinates.getString("end"));
-                                mrkgrp[i].setSnippet("Bus number " + BusNumber);
+                                mrkgrp[i].setSnippet("ETA: " + coordinates.getString("time"));
                                 mrkgrp[i].setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
                                 mrkgrp[i].setVisible(true);
 
@@ -820,11 +820,11 @@ public class Bus_Fetch extends ActionBarActivity implements android.location.Loc
                                 Log.e("Values bagh", coordinates.toString());
 
                                 MarkerOptions markerOption = new MarkerOptions().position(new LatLng(10, 10));
-                                mrkgrp[i] =   map.addMarker(markerOption);
+                                mrkgrp[i] = map.addMarker(markerOption);
                                 mrkgrp[i].setVisible(false);
                                 mrkgrp[i].setPosition(new LatLng(Double.parseDouble(coordinates.getString("latitude")), Double.parseDouble(coordinates.getString("longitude"))));
                                 mrkgrp[i].setTitle("From :" + coordinates.getString("start") + "  " + "To :" + coordinates.getString("end"));
-                                mrkgrp[i].setSnippet("Bus number " + BusNumber);
+                                mrkgrp[i].setSnippet("ETA: " + coordinates.getString("time"));
                                 mrkgrp[i].setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
                                 mrkgrp[i].setVisible(true);
 
@@ -934,7 +934,7 @@ public class Bus_Fetch extends ActionBarActivity implements android.location.Loc
                                 mrkgrp[i].setVisible(false);
                                 mrkgrp[i].setPosition(new LatLng(Double.parseDouble(coordinates.getString("latitude")), Double.parseDouble(coordinates.getString("longitude"))));
                                 mrkgrp[i].setTitle("From :" + coordinates.getString("start") + "  " + "To :" + coordinates.getString("end"));
-                                mrkgrp[i].setSnippet("Bus number " + BusNumber);
+                                mrkgrp[i].setSnippet("ETA: " + coordinates.getString("time"));
                                 mrkgrp[i].setIcon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
                                 mrkgrp[i].setVisible(true);
 
