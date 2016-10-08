@@ -45,6 +45,7 @@
     <!-- navigation drawer item labels  -->
     <string-array name="nav_drawer_labels">
         <item>@string/FindPeople</item>
+        <item>@string/SwachBharat</item>
         <item>@string/FindBus</item>
         <item>@string/SearchGov</item>
         <item>@string/MyLocation</item>

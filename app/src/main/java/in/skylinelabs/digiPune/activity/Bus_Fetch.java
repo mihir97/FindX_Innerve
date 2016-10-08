@@ -14,9 +14,9 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -59,88 +59,51 @@ import in.skylinelabs.digiPune.R;
 
 public class Bus_Fetch extends ActionBarActivity implements android.location.LocationListener, GoogleMap.OnCameraChangeListener, GoogleMap.OnMapLoadedCallback {
 
-    private ProgressDialog pDialog;
-
-
-    private Toolbar mToolbar;
-
-    MaterialSheetFab materialSheetFab;
-
-    String BusNumber;
-
-    String start, end;
-
-    GoogleMap map;
-
+    //The minimum distance to change updates in metters
+    private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 0;//0 metters
+    //The minimum time beetwen updates in milliseconds
+    private static final long MIN_TIME_BW_UPDATES = 1000 * 30 * 1; // 1/2 minute
+    private static final String url_get_category = "http://www.skylinelabs.in/Geo/PMPML/routewise.php";
     public static int i;
-
+    final Context context = this;
+    //Declaring a Location Manager
+    protected LocationManager locationManager;
+    MaterialSheetFab materialSheetFab;
+    String BusNumber;
+    String start, end;
+    GoogleMap map;
     ProgressBar prgbr, markerp;
-
     TextView txt1, txt2, textView3;
-
     long date;
     @SuppressLint("SimpleDateFormat")
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-    final Context context = this;
-
     String post;
     //flag for GPS Status
     boolean isGPSEnabled = false;
-
     //flag for network status
     boolean isNetworkEnabled = false;
-
     boolean canGetLocation = false;
-
     Boolean catopen = false;
-
     EditText toolbarSearchView;
-
     Location location;
     double latitude;
     double longitude;
-
-    //The minimum distance to change updates in metters
-    private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 0;//0 metters
-
-    //The minimum time beetwen updates in milliseconds
-    private static final long MIN_TIME_BW_UPDATES = 1000 * 30 * 1; // 1/2 minute
-
-    //Declaring a Location Manager
-    protected LocationManager locationManager;
-
-
     FloatingActionButton btn2;
-
-
-
     JSONParser jsonParser = new JSONParser();
-
-    private static final String url_get_category = "http://www.skylinelabs.in/Geo/PMPML/routewise.php";
-
-
     AlertDialog alertDialog;
-
     Boolean searchByNumberb = false, searchByRoute = false;
-
     FloatingActionButton btn1;
-
     Marker[] mrkgrp = new Marker[1000000];
-
     View.OnClickListener snackaction, snackaction1;
-
     CustomAutoCompleteView myAutoComplete, myAutoComplete2;
-
     // adapter for auto-complete
     ArrayAdapter<String> myAdapter, myAdapter2;
-
     // for database operations
     DatabaseHandler databaseH;
-
     // just to add some initial value
     String[] item = new String[]{"Please search..."};
-
+    private ProgressDialog pDialog;
+    private Toolbar mToolbar;
 
     @Override
     protected void onStop() {
@@ -283,7 +246,7 @@ public class Bus_Fetch extends ActionBarActivity implements android.location.Loc
         prgbr = (ProgressBar) findViewById(R.id.progressBar1);
         prgbr.setVisibility(View.VISIBLE);
 
-        markerp = (ProgressBar) findViewById(R.id.progressBar1);
+        markerp = (ProgressBar) findViewById(R.id.progressBar2);
         markerp.setVisibility(View.GONE);
         map = ((MapFragment) getFragmentManager().findFragmentById(
                 R.id.map)).getMap();
@@ -622,6 +585,15 @@ public class Bus_Fetch extends ActionBarActivity implements android.location.Loc
         return longitude;
     }
 
+    public void searchByNumber() {
+        searchByNumberb = true;
+        searchByRoute = false;
+        BusNumber = toolbarSearchView.getText().toString();
+        new GetByNumber().execute();
+        map.clear();
+        markerp.setVisibility(View.VISIBLE);
+    }
+
     /**
      * Function to check GPS/wifi enabled
      */
@@ -658,17 +630,6 @@ public class Bus_Fetch extends ActionBarActivity implements android.location.Loc
             return null;
         }
     }
-
-    public void searchByNumber() {
-        searchByNumberb = true;
-        searchByRoute = false;
-        BusNumber = toolbarSearchView.getText().toString();
-        new GetByNumber().execute();
-        map.clear();
-        markerp.setVisibility(View.VISIBLE);
-    }
-
-
 
     class GetByNumber extends AsyncTask<String, String, String> {
 
