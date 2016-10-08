@@ -93,7 +93,8 @@ public class Privacypolicy extends ActionBarActivity implements FragmentDrawer.F
         switch (position) {
             case 0:
                 finish();
-                Pre_launch_activity.post=0;
+                i = new Intent(this, FriendLocation.class);
+                startActivity(i);
                 title = "FindX";
                 break;
             case 1:

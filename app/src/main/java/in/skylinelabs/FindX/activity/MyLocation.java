@@ -140,8 +140,6 @@ public class MyLocation extends ActionBarActivity implements FragmentDrawer.Frag
 					getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
 			drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
 			drawerFragment.setDrawerListener(this);
-			displayView(4);
-
 
 			EditText toolbarSearchView = (EditText) findViewById(R.id.search_view);
 			toolbarSearchView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -713,7 +711,8 @@ public class MyLocation extends ActionBarActivity implements FragmentDrawer.Frag
 		Intent i;
 		switch (position) {
 			case 0:
-				Pre_launch_activity.post=0;
+				i = new Intent(this, FriendLocation.class);
+				startActivity(i);
 				break;
 			case 1:
 				i = new Intent(this, Bus_Fetch.class);

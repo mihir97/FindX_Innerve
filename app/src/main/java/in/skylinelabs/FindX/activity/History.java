@@ -223,7 +223,8 @@ public class History extends ActionBarActivity implements FragmentDrawer.Fragmen
 		Intent i;
 		switch (position) {
 			case 0:
-				Pre_launch_activity.post=0;
+				i = new Intent(this, FriendLocation.class);
+				startActivity(i);
 				break;
 			case 1:
 				i = new Intent(this, Bus_Fetch.class);

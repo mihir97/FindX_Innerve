@@ -825,7 +825,8 @@ public class Location_event extends ActionBarActivity implements GoogleApiClient
         switch (position) {
             case 0:
                 finish();
-                Pre_launch_activity.post=0;
+                i = new Intent(this, FriendLocation.class);
+                startActivity(i);
                 title = "FindX";
                 break;
             case 1:

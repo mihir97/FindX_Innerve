@@ -56,7 +56,8 @@
         <activity
             android:name="in.skylinelabs.FindX.activity.FriendLocation"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
         </activity>
         <activity
             android:name="in.skylinelabs.FindX.activity.SOS_Contacts"

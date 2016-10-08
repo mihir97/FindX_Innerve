@@ -245,7 +245,7 @@ public class FriendLocation extends ActionBarActivity implements FragmentDrawer.
         drawerFragment.setDrawerListener(this);
 
         // display the first navigation drawer view on app launch
-        displayView(0);
+        //displayView(0);
 
         getLocation();
 
@@ -477,7 +477,8 @@ public class FriendLocation extends ActionBarActivity implements FragmentDrawer.
         Intent i;
         switch (position) {
             case 0:
-                Pre_launch_activity.post=0;
+                i = new Intent(this, FriendLocation.class);
+                startActivity(i);
                 break;
             case 1:
                 i = new Intent(this, Bus_Fetch.class);

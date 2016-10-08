@@ -23,16 +23,12 @@ public class DemoPagerAdapter extends FragmentPagerAdapter {
             return ColorFragment.newInstance(Color.parseColor("#0d47a1"), i);//red
 
         if(i==1)
-        return ColorFragment.newInstance(Color.parseColor("#00958a"), i);//pink
+            return ColorFragment.newInstance(Color.parseColor("#ff5252"), i);//pink
 
         if(i==2)
-            return ColorFragment.newInstance(Color.parseColor("#ff5252"), i);//green
+            return ColorFragment.newInstance(Color.parseColor("#009588"), i);//green
         if(i==3)
             return ColorFragment.newInstance(Color.parseColor("#ffab40"), i);
-
-        if(i==4)
-            return ColorFragment.newInstance(Color.parseColor("#0d47a1"), i);
-
         else
             return null;
 

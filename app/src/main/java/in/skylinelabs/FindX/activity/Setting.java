@@ -72,7 +72,7 @@ public class Setting extends ActionBarActivity implements FragmentDrawer.Fragmen
         prgbr.setVisibility(View.GONE);
 
         cat = (Spinner) findViewById(R.id.spinner);
-        cat.setSelection(Integer.valueOf(settings.getString("category_pos", "1")));
+        cat.setSelection(settings.getInt("category_pos", 1));
 
         cat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -154,7 +154,7 @@ public class Setting extends ActionBarActivity implements FragmentDrawer.Fragmen
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
         drawerFragment.setDrawerListener(this);
-        displayView(5);
+        //displayView(5);
 
         redo = (FloatingActionButton) findViewById(R.id.redo);
         redo.setOnClickListener(new View.OnClickListener() {
@@ -416,7 +416,8 @@ public class Setting extends ActionBarActivity implements FragmentDrawer.Fragmen
         Intent i;
         switch (position) {
             case 0:
-                Pre_launch_activity.post=0;
+                i = new Intent(this, FriendLocation.class);
+                startActivity(i);
                 break;
             case 1:
                 i = new Intent(this, Bus_Fetch.class);
