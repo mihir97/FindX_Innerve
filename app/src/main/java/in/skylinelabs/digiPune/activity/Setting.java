@@ -85,7 +85,7 @@ public class Setting extends ActionBarActivity implements FragmentDrawer.Fragmen
         prgbr.setVisibility(View.GONE);
 
         cat = (Spinner) findViewById(R.id.spinner);
-        cat.setSelection(settings.getInt("category_pos", 1));
+        cat.setSelection(Integer.valueOf(settings.getString("category_pos", "1")));
 
         cat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -429,44 +429,33 @@ public class Setting extends ActionBarActivity implements FragmentDrawer.Fragmen
         Intent i;
         switch (position) {
             case 0:
-                finish();
                 Pre_launch_activity.post=0;
                 break;
             case 1:
-                finish();
-                Intent i2 = new Intent(this, ComplaintPortal.class);
-                startActivity(i2);
-                break;
-            case 2:
-                finish();
                 i = new Intent(this, Bus_Fetch.class);
                 startActivity(i);
                 break;
-            case 3:
-                finish();
+            case 2:
                 i = new Intent(this, FindGov.class);
                 startActivity(i);
                 break;
-            case 4:
-                finish();
+            case 3:
                 i = new Intent(this, MyLocation.class);
                 startActivity(i);
                 break;
-            case 5:
-                finish();
+            case 4:
                 i = new Intent(this, History.class);
                 startActivity(i);
                 break;
-            case 6:
-
+            case 5:
+                i = new Intent(this, Setting.class);
+                startActivity(i);
                 break;
-            case 7:
-                finish();
+            case 6:
                 i = new Intent(this, SOS_Contacts.class);
                 startActivity(i);
                 break;
-            case 8:
-                finish();
+            case 7:
                 i = new Intent(this, Favourites.class);
                 startActivity(i);
                 break;

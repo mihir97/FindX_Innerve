@@ -3,14 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/white" >
+    android:background="@color/colorPrimaryDark" >
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.90"
-        android:src="@drawable/skyline_logo"
+        android:src="@color/colorPrimary"
         android:padding="50dp" />
 
 </LinearLayout>

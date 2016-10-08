@@ -147,46 +147,35 @@ public class Favourites extends ActionBarActivity implements FragmentDrawer.Frag
 		Intent i;
 		switch (position) {
 			case 0:
-				finish();
 				Pre_launch_activity.post=0;
 				break;
 			case 1:
-				finish();
-				Intent i2 = new Intent(this, ComplaintPortal.class);
-				startActivity(i2);
-				break;
-			case 2:
-				finish();
 				i = new Intent(this, Bus_Fetch.class);
 				startActivity(i);
 				break;
-			case 3:
-				finish();
+			case 2:
 				i = new Intent(this, FindGov.class);
 				startActivity(i);
 				break;
-			case 4:
-				finish();
+			case 3:
 				i = new Intent(this, MyLocation.class);
 				startActivity(i);
 				break;
-			case 5:
-				finish();
+			case 4:
 				i = new Intent(this, History.class);
 				startActivity(i);
 				break;
-			case 6:
-				finish();
+			case 5:
 				i = new Intent(this, Setting.class);
 				startActivity(i);
 				break;
-			case 7:
-				finish();
+			case 6:
 				i = new Intent(this, SOS_Contacts.class);
 				startActivity(i);
 				break;
-			case 8:
-
+			case 7:
+				i = new Intent(this, Favourites.class);
+				startActivity(i);
 				break;
 
 			default:

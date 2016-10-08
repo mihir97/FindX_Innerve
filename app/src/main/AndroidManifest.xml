@@ -235,11 +235,6 @@
             android:label="@string/title_activity_conductor_" >
         </activity>
 
-        <activity
-            android:name="in.skylinelabs.digiPune.activity.ComplaintPortal"
-            android:label="@string/title_activity_conductor_" >
-        </activity>
-
     </application>
 
 </manifest>

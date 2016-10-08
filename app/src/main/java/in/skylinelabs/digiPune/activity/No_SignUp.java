@@ -49,14 +49,14 @@ public class No_SignUp extends ActionBarActivity {
             }
         });
 
-        three.setOnClickListener(new View.OnClickListener() {
+        /*three.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i2 = new Intent(No_SignUp.this, ComplaintPortal.class);
                 startActivity(i2);
             }
         });
-
+*/
     }
 
     @Override
