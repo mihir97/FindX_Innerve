@@ -4,15 +4,6 @@ package in.skylinelabs.digiPune.activity;
 //https://halfthought.wordpress.com/2014/12/02/reveal-activity-transitions/
 
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
@@ -49,58 +40,47 @@ import android.widget.TextView;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.android.gms.location.LocationListener;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import in.skylinelabs.digiPune.R;
+
 public class Sign_up extends Activity implements LocationListener {
-
-    Button btn;
-    EditText edttxt1,edttxt2, edttxt3, edttxt4, edttxt5;
-
-    Boolean error;
-
-    public static Boolean firstTime;
-    TextView txt1, txt2, help;
-    AlertDialog alertDialog1;
-
-    String email;
-
-    Button txt;
-
-    private ProgressDialog pDialog;
-
-    GPSTracker gps;
-
-    TextInputLayout lNameLayout,lNameLayout1,lNameLayout2,lNameLayout4,lNameLayoutEmail;
-
-    AlertDialog alertDialog;
-
-    long date;
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-    String networkTS;
-
-    Date date1;
-
-    Bundle savedInstanceState;
-
-    String mystringLatitude;
-    String mystringLongitude;
-
-    String name;
-
-    static String mydevice_id, password;
-
-    final Context context = this;
 
     private static final String url_create_product = "http://www.skylinelabs.in/Geo/signup_app.php";
     private static final String url_product_exists = "http://www.skylinelabs.in/Geo/get_product_exists.php";
+    public static Boolean firstTime;
+    static String mydevice_id, password;
+    final Context context = this;
+    Button btn;
+    EditText edttxt1, edttxt2, edttxt3, edttxt4, edttxt5;
+    Boolean error;
+    TextView txt1, txt2, help;
+    AlertDialog alertDialog1;
+    String email;
+    Button txt;
+    GPSTracker gps;
+    TextInputLayout lNameLayout, lNameLayout1, lNameLayout2, lNameLayout4, lNameLayoutEmail;
+    AlertDialog alertDialog;
+    long date;
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    String networkTS;
+    Date date1;
+    Bundle savedInstanceState;
+    String mystringLatitude;
+    String mystringLongitude;
+    String name;
     JSONParser jsonParser = new JSONParser();
-
-
     GoogleCloudMessaging gcm;
     String regid = "";
-
     String myPhoneNumber;
-
+    private ProgressDialog pDialog;
 
     @Override
     protected void onResume() {
@@ -114,14 +94,12 @@ public class Sign_up extends Activity implements LocationListener {
         if (locationProviders == null || locationProviders.equals("")) {
 
 
-            if(!alertDialog.isShowing())
-            {
+            if (!alertDialog.isShowing()) {
                 alertDialog.show();
             }
 
         }
     }
-
 
 
     @Override
@@ -139,16 +117,15 @@ public class Sign_up extends Activity implements LocationListener {
         final SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
 
-
-        TextView skip  = (TextView) findViewById(R.id.buttonSkip);
+        TextView skip = (TextView) findViewById(R.id.buttonSkip);
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 settings.edit().putBoolean("signup_skip", true).commit();
                 settings.edit().putBoolean("my_first_time", false).commit();
-                int flag=(PackageManager.COMPONENT_ENABLED_STATE_DISABLED);
-                ComponentName component=new ComponentName(Sign_up.this, BootCompletedReceiver.class);
+                int flag = (PackageManager.COMPONENT_ENABLED_STATE_DISABLED);
+                ComponentName component = new ComponentName(Sign_up.this, BootCompletedReceiver.class);
 
                 getPackageManager()
                         .setComponentEnabledSetting(component, flag,
@@ -158,9 +135,6 @@ public class Sign_up extends Activity implements LocationListener {
 
                 Intent i = new Intent(Sign_up.this, No_SignUp.class);
                 startActivity(i);
-
-
-
 
 
             }
@@ -179,9 +153,7 @@ public class Sign_up extends Activity implements LocationListener {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     startActivity(i,
                             ActivityOptions.makeSceneTransitionAnimation(Sign_up.this).toBundle());
-                }
-                else
-                {
+                } else {
                     startActivity(i);
                 }
 
@@ -221,18 +193,14 @@ public class Sign_up extends Activity implements LocationListener {
         edttxt1.requestFocus();
 
 
-        try{
+        try {
 
-            TelephonyManager tMgr = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
+            TelephonyManager tMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
             myPhoneNumber = tMgr.getLine1Number();
             edttxt3.setText(myPhoneNumber);
-        }
-
-        catch(Exception e)
-        {
+        } catch (Exception e) {
 
         }
-
 
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
@@ -270,13 +238,11 @@ public class Sign_up extends Activity implements LocationListener {
         if (locationProviders == null || locationProviders.equals("")) {
 
 
-            if(!alertDialog.isShowing())
-            {
+            if (!alertDialog.isShowing()) {
                 alertDialog.show();
             }
 
         }
-
 
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -285,15 +251,14 @@ public class Sign_up extends Activity implements LocationListener {
                 ConnectionDetector cd1 = new ConnectionDetector(getApplicationContext());
                 Boolean isInternetPresent1 = cd1.isConnectingToInternet();
 
-                if(isInternetPresent1)
-                {
+                if (isInternetPresent1) {
                     final String PREFS_NAME = "GeoPreferences";
                     SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
 
                     mydevice_id = edttxt1.getText().toString();
                     name = edttxt2.getText().toString();
-                    myPhoneNumber =  edttxt3.getText().toString();
+                    myPhoneNumber = edttxt3.getText().toString();
                     password = edttxt4.getText().toString();
                     settings.edit().putString("number", myPhoneNumber).commit();
 
@@ -309,48 +274,34 @@ public class Sign_up extends Activity implements LocationListener {
                     lNameLayoutEmail.setErrorEnabled(false);
 
 
+                    if (edttxt5.getText().toString().matches("") || edttxt1.getText().toString().matches("") || edttxt2.getText().toString().matches("") || edttxt3.getText().toString().matches("") || (edttxt4.getText().toString().trim().length() < 7)) {
+                        if (edttxt1.getText().toString().matches("")) {
+                            lNameLayout.setErrorEnabled(true);
+                            lNameLayout.setError("*Required field");
+                        }
 
-                    if(edttxt5.getText().toString().matches("") || edttxt1.getText().toString().matches("") || edttxt2.getText().toString().matches("") || edttxt3.getText().toString().matches("") || (edttxt4.getText().toString().trim().length() < 7))
-                    {
-                       if(edttxt1.getText().toString().matches(""))
-                       {
-                           lNameLayout.setErrorEnabled(true);
-                           lNameLayout.setError("*Required field");
-                       }
-
-                        if(edttxt2.getText().toString().matches(""))
-                        {
+                        if (edttxt2.getText().toString().matches("")) {
                             lNameLayout1.setErrorEnabled(true);
                             lNameLayout1.setError("*Required field");
                         }
 
-                        if(edttxt3.getText().toString().matches(""))
-                        {
+                        if (edttxt3.getText().toString().matches("")) {
                             lNameLayout2.setErrorEnabled(true);
                             lNameLayout2.setError("*Required field");
                         }
 
-                        if(edttxt5.getText().toString().matches(""))
-                        {
+                        if (edttxt5.getText().toString().matches("")) {
                             lNameLayoutEmail.setErrorEnabled(true);
                             lNameLayoutEmail.setError("*Required field");
                         }
 
-                        if(edttxt4.getText().toString().trim().length() < 7)
-                        {
+                        if (edttxt4.getText().toString().trim().length() < 7) {
                             lNameLayout4.setErrorEnabled(true);
                             lNameLayout4.setError("*Minimum 6 characters");
                         }
-                    }
+                    } else {
 
-
-
-
-                    else
-                    {
-
-                        try
-                        {
+                        try {
                             mystringLatitude = String.valueOf(gps.getLatitude());
                             mystringLongitude = String.valueOf(gps.getLongitude());
 
@@ -413,6 +364,58 @@ public class Sign_up extends Activity implements LocationListener {
 
         });
 
+    }
+
+    @Override
+    public void onLocationChanged(Location gps) {
+        // TODO Auto-generated method stub
+        mystringLatitude = String.valueOf(gps.getLatitude());
+        mystringLongitude = String.valueOf(gps.getLongitude());
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_log_in, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        switch (item.getItemId()) {
+
+
+            case R.id.info: {
+                AlertDialog.Builder alertadd = new AlertDialog.Builder(
+                        Sign_up.this);
+                LayoutInflater factory = LayoutInflater.from(Sign_up.this);
+
+                final View view = factory.inflate(R.layout.dialog_main, null);
+
+                ImageView image = (ImageView) view.findViewById(R.id.imageView);
+                image.setImageResource(R.drawable.mylocation_help);
+
+                alertadd.setView(view);
+
+
+                alertadd.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dlg, int sumthin) {
+
+                    }
+                });
+                alertDialog = alertadd.create();
+                alertDialog.show();
+                return super.onOptionsItemSelected(item);
+
+            }
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     class CreateNewProduct extends AsyncTask<String, String, String> {
@@ -672,59 +675,6 @@ public class Sign_up extends Activity implements LocationListener {
 
 
             }
-
-    @Override
-    public void onLocationChanged(Location gps) {
-        // TODO Auto-generated method stub
-        mystringLatitude = String.valueOf(gps.getLatitude());
-        mystringLongitude = String.valueOf(gps.getLongitude());
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_log_in, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        switch (item.getItemId()) {
-
-
-
-            case R.id.info: {
-                AlertDialog.Builder alertadd = new AlertDialog.Builder(
-                        Sign_up.this);
-                LayoutInflater factory = LayoutInflater.from(Sign_up.this);
-
-                final View view = factory.inflate(R.layout.dialog_main, null);
-
-                ImageView image = (ImageView) view.findViewById(R.id.imageView);
-                image.setImageResource(R.drawable.mylocation_help);
-
-                alertadd.setView(view);
-
-
-                alertadd.setPositiveButton("ok", new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface dlg, int sumthin) {
-
-                    }
-                });
-                alertDialog = alertadd.create();
-                alertDialog.show();
-                return super.onOptionsItemSelected(item);
-
-            }
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
 
 
