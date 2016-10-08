@@ -1,4 +1,4 @@
-package in.skylinelabs.digiPune;
+package in.skylinelabs.FindX;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -17,14 +17,14 @@
         <fragment
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.MapFragment"
-            android:layout_height="fill_parent"
             android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             />
 
         <RelativeLayout
+            android:id="@+id/mainRel"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:id="@+id/mainRel"
             android:layout_below="@+id/toolbar"
             >
 
@@ -84,23 +84,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@+id/editText1"
-                android:visibility="gone"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="28dp"/>
+                android:layout_marginTop="28dp"
+                android:visibility="gone" />
 
             <com.github.clans.fab.FloatingActionButton
                 android:id="@+id/button1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_gravity="bottom|right"
+                android:layout_marginBottom="50dp"
                 android:src="@drawable/ic_action_search_w"
                 fab:fab_colorNormal="@color/colorPrimary"
                 fab:fab_colorPressed="@color/colorPrimary"
-                fab:fab_colorRipple="@color/colorPrimary"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginBottom="50dp"
-                android:layout_alignParentEnd="true" />
+                fab:fab_colorRipple="@color/colorPrimary" />
 
 
 
@@ -120,20 +120,20 @@
                         android:orientation="vertical" >
 
 
-                        <in.skylinelabs.digiPune.activity.CustomAutoCompleteView
+                        <in.skylinelabs.FindX.activity.CustomAutoCompleteView
                             android:id="@+id/myautocomplete1"
                             android:layout_width="250dp"
                             android:layout_height="50dp"
-                            android:hint="Starting Point"
-                            android:textColor="@color/colortry"
-                            android:gravity="center"
-                            android:completionThreshold="1"
                             android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
                             android:background="@android:color/transparent"
+                            android:completionThreshold="1"
+                            android:gravity="center"
+                            android:hint="Starting Point"
 
-                            android:layout_centerHorizontal="true">
+                            android:textColor="@color/colortry">
 
-                        </in.skylinelabs.digiPune.activity.CustomAutoCompleteView>
+                        </in.skylinelabs.FindX.activity.CustomAutoCompleteView>
 
 
 
@@ -150,8 +150,8 @@
             <android.support.v7.widget.CardView
                 android:id="@+id/fab_sheet3"
                 android:layout_width="match_parent"
-                android:layout_below = "@+id/fab_sheet2"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fab_sheet2">
 
 
                 <RelativeLayout
@@ -160,21 +160,20 @@
                     android:orientation="vertical" >
 
 
-
-                    <in.skylinelabs.digiPune.activity.CustomAutoCompleteView
+                    <in.skylinelabs.FindX.activity.CustomAutoCompleteView
                         android:id="@+id/myautocomplete2"
-                        android:textColor="@color/colortry"
-                        android:gravity="center"
                         android:layout_width="250dp"
                         android:layout_height="50dp"
-                        android:hint="Destination"
-                        android:background="@android:color/transparent"
-
-                        android:completionThreshold="1"
                         android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true">
+                        android:layout_centerHorizontal="true"
+                        android:background="@android:color/transparent"
+                        android:completionThreshold="1"
 
-                    </in.skylinelabs.digiPune.activity.CustomAutoCompleteView>
+                        android:gravity="center"
+                        android:hint="Destination"
+                        android:textColor="@color/colortry">
+
+                    </in.skylinelabs.FindX.activity.CustomAutoCompleteView>
 
 
                 </RelativeLayout>
@@ -193,15 +192,15 @@
                 android:id="@+id/location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
                 android:layout_gravity="bottom|right"
+                android:layout_marginBottom="125dp"
                 android:src="@drawable/ic_action_location_found"
                 fab:fab_colorNormal="@android:color/white"
                 fab:fab_colorPressed="#e0e0e0"
-                fab:fab_colorRipple="#9e9e9e"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginBottom="125dp"
-                android:layout_alignParentEnd="true" />
+                fab:fab_colorRipple="#9e9e9e" />
 
 
 
@@ -214,13 +213,13 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            android:background="@android:color/white"
             android:layout_marginLeft="9dp"
             android:layout_marginRight="9dp"
             android:layout_marginTop="8dp"
-            local:theme="@style/ThemeOverlay.AppCompat.Light"
+            android:background="@android:color/white"
+            android:minHeight="?attr/actionBarSize"
             local:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            local:theme="@style/ThemeOverlay.AppCompat.Light"
            >
             <LinearLayout
                 android:id="@+id/search_container"
@@ -237,12 +236,12 @@
                     android:background="@android:color/transparent"
                     android:gravity="center_vertical"
                     android:hint="Enter Bus Number"
-                    android:textColor="@android:color/white"
+                    android:imeOptions="actionGo"
                     android:inputType="text"
                     android:maxLines="1"
                     android:paddingLeft="2dp"
-                    android:imeOptions="actionGo"
                     android:singleLine="true"
+                    android:textColor="@android:color/white"
                     />
 
 
@@ -256,7 +255,7 @@
 
     <fragment
         android:id="@+id/fragment_navigation_drawer"
-        android:name="in.skylinelabs.digiPune.activity.FragmentDrawer"
+        android:name="in.skylinelabs.FindX.activity.FragmentDrawer"
         android:layout_width="@dimen/nav_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"

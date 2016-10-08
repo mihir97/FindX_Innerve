@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    tools:context=".Location_event"
+    android:layout_height="match_parent"
 
-    android:layout_height="match_parent">
+    tools:context=".Location_event">
 
 
 
@@ -23,18 +23,18 @@
         <fragment
             android:id="@+id/map"
             android:name="com.google.android.gms.maps.MapFragment"
-            android:layout_height="fill_parent"
             android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
 
             />
 
         <RelativeLayout
+            android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/toolbar"
             android:background="@android:color/white"
-            android:minHeight="?attr/actionBarSize"
-            android:id="@+id/relativeLayout">
+            android:minHeight="?attr/actionBarSize">
 
 
             <Spinner
@@ -45,11 +45,11 @@
                 android:id="@+id/actionbutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Action"
+                android:layout_marginLeft="30dp"
                 android:layout_toRightOf="@+id/spinner_nav"
+                android:text="Action"
                 android:textColor="@color/colorPrimaryDark"
-                android:visibility="gone"
-                android:layout_marginLeft="30dp"/>
+                android:visibility="gone" />
 
         </RelativeLayout>
 
@@ -58,21 +58,21 @@
             android:id="@+id/fab_container2"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:layout_below="@+id/relativeLayout"
             android:layout_marginTop="-30dp"
-            android:elevation="10dp"
-            android:layout_below="@+id/relativeLayout">
+            android:elevation="10dp">
 
 
 
         <RelativeLayout
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/inflate"
                 android:layout_width="fill_parent"
                  android:layout_height="fill_parent"
-                android:background="@color/colorPrimary"
-
                 android:layout_marginTop="30dp"
+
+            android:background="@color/colorPrimary"
                 android:orientation="vertical" >
 
 
@@ -90,102 +90,102 @@
                         android:orientation="vertical" >
 
                         <TextView
+                            android:id="@+id/textView12"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:text="Select action"
-                            android:textColor="@android:color/white"
-                            android:id="@+id/textView12"
                             android:layout_alignParentTop="true"
-                            android:layout_centerHorizontal="true" />
+                            android:layout_centerHorizontal="true"
+                            android:text="Select action"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@android:color/white" />
 
                         <CheckBox
+                            android:id="@+id/wifi_check"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Wifi"
-                            android:id="@+id/wifi_check"
-                            android:textColor="@android:color/white"
-                            android:checked="false"
-                            android:layout_marginTop="64dp"
                             android:layout_below="@+id/textView12"
-                            android:layout_centerHorizontal="true" />
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="64dp"
+                            android:checked="false"
+                            android:text="Wifi"
+                            android:textColor="@android:color/white" />
 
                         <Switch
+                            android:id="@+id/wifi_switch"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/wifi_switch"
 
                             android:layout_below="@+id/wifi_check"
                             android:layout_centerHorizontal="true"
                             android:checked="false" />
 
                         <CheckBox
+                            android:id="@+id/data_check"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Data"
-                            android:id="@+id/data_check"
-                            android:textColor="@android:color/white"
                             android:layout_below="@+id/wifi_switch"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="30dp"
-                            android:checked="false" />
+                            android:checked="false"
+                            android:text="Data"
+                            android:textColor="@android:color/white" />
 
                         <Switch
+                            android:id="@+id/data_switch"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/data_switch"
                             android:layout_below="@+id/data_check"
                             android:layout_centerHorizontal="true"
                             android:checked="false" />
 
                         <CheckBox
+                            android:id="@+id/silent_check"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Silent Mode"
-                            android:textColor="@android:color/white"
-                            android:id="@+id/silent_check"
                             android:layout_below="@+id/data_switch"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="30dp"
-                            android:checked="false" />
+                            android:checked="false"
+                            android:text="Silent Mode"
+                            android:textColor="@android:color/white" />
 
                         <Switch
+                            android:id="@+id/silent_switch"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/silent_switch"
                             android:layout_below="@+id/silent_check"
                             android:layout_centerHorizontal="true"
                             android:checked="false" />
 
                         <CheckBox
+                            android:id="@+id/notify_check"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Notify favourites"
-                            android:textColor="@android:color/white"
-                            android:id="@+id/notify_check"
                             android:layout_below="@+id/silent_switch"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="30dp"
-                            android:checked="false" />
+                            android:checked="false"
+                            android:text="Notify favourites"
+                            android:textColor="@android:color/white" />
 
                         <CheckBox
+                            android:id="@+id/reminder_check"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Reminder"
-                            android:id="@+id/reminder_check"
-                            android:textColor="@android:color/white"
                             android:layout_below="@+id/notify_check"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="30dp"
-                            android:checked="false" />
+                            android:checked="false"
+                            android:text="Reminder"
+                            android:textColor="@android:color/white" />
 
                         <EditText
+                            android:id="@+id/reminder_editText"
                             android:layout_width="250dp"
                             android:layout_height="wrap_content"
-                            android:textColor="@android:color/white"
-                            android:id="@+id/reminder_editText"
                             android:layout_below="@+id/reminder_check"
-                            android:layout_centerHorizontal="true" />
+                            android:layout_centerHorizontal="true"
+                            android:textColor="@android:color/white" />
 
 
 
@@ -195,15 +195,15 @@
 
 
                 <Button
+                    android:id="@+id/ok"
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="OK"
-                    android:id="@+id/ok"
-                    android:textColor="@color/colorPrimary"
-                    android:layout_marginBottom="25dp"
                     android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="25dp"
+                    android:text="OK"
+                    android:textColor="@color/colorPrimary" />
 
             </RelativeLayout>
 
@@ -212,13 +212,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top|right"
+                android:onClick="onFabPressed"
                 android:src="@drawable/fab_add"
+                android:transitionName="button_fab"
                 fab:fab_colorNormal="@color/colorPrimary"
+
                 fab:fab_colorPressed="@color/colorPressed"
                 fab:fab_colorRipple="@color/colorRipple"
-
-                android:transitionName="button_fab"
-                android:onClick="onFabPressed"
                 />
 
         </FrameLayout>
@@ -228,8 +228,8 @@
             android:id="@+id/fab_container1"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:elevation="4dp"
-            android:layout_below="@+id/relativeLayout">
+            android:layout_below="@+id/relativeLayout"
+            android:elevation="4dp">
 
 
 
@@ -263,30 +263,30 @@
                     android:id="@+id/add"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_gravity="bottom|right"
+                    android:layout_marginBottom="50dp"
                     android:src="@drawable/fab_add"
                     fab:fab_colorNormal="@color/colorPrimary"
                     fab:fab_colorPressed="@color/colorPressed"
                     fab:fab_colorRipple="@color/colorRipple"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginBottom="50dp"
-                    android:layout_alignParentEnd="true"
                    />
 
                 <com.github.clans.fab.FloatingActionButton
                     android:id="@+id/location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_gravity="bottom|right"
+                    android:layout_marginBottom="125dp"
                     android:src="@drawable/ic_action_location_found"
                     fab:fab_colorNormal="@android:color/white"
                     fab:fab_colorPressed="#e0e0e0"
-                    fab:fab_colorRipple="#9e9e9e"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginBottom="125dp"
-                    android:layout_alignParentEnd="true" />
+                    fab:fab_colorRipple="#9e9e9e" />
 
                 <ProgressBar
                     android:id="@+id/progressBar1"
@@ -311,10 +311,10 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
             android:background="@color/colorPrimaryDark"
-            local:theme="@style/ThemeOverlay.AppCompat.Light"
+            android:minHeight="?attr/actionBarSize"
             local:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            local:theme="@style/ThemeOverlay.AppCompat.Light"
             >
             <LinearLayout
                 android:id="@+id/search_container"
@@ -331,12 +331,12 @@
                     android:background="@android:color/transparent"
                     android:gravity="center_vertical"
                     android:hint="Search address"
-                    android:textColor="@android:color/white"
                     android:imeOptions="actionSearch"
                     android:inputType="text"
                     android:maxLines="1"
                     android:paddingLeft="2dp"
                     android:singleLine="true"
+                    android:textColor="@android:color/white"
                     />
 
 
@@ -351,7 +351,7 @@
 
     <fragment
         android:id="@+id/fragment_navigation_drawer"
-        android:name="in.skylinelabs.digiPune.activity.FragmentDrawer"
+        android:name="in.skylinelabs.FindX.activity.FragmentDrawer"
         android:layout_width="@dimen/nav_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"

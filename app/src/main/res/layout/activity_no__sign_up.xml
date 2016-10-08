@@ -2,27 +2,27 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/darker_gray"
-    tools:context="in.skylinelabs.digiPune.activity.No_SignUp">
+    tools:context="in.skylinelabs.FindX.activity.No_SignUp">
 
     <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:local="http://schemas.android.com/apk/res-auto"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
         android:background="@color/colorPrimaryDark"
-        local:theme="@style/ThemeOverlay.AppCompat.Light"
+        android:minHeight="?attr/actionBarSize"
         local:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        local:theme="@style/ThemeOverlay.AppCompat.Light"
         >
     </android.support.v7.widget.Toolbar>
 
     <android.support.v7.widget.CardView
         android:id="@+id/card1"
         android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="60dp"
-        android:layout_height="100dp">
+        android:layout_marginTop="60dp">
 
 
         <RelativeLayout
@@ -31,24 +31,24 @@
             android:orientation="vertical" >
 
             <ImageView
+                android:id="@+id/imageView1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:id="@+id/imageView1"
-                android:src="@drawable/bus"
-                android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/bus" />
 
             <TextView
+                android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Find Bus"
-                android:id="@+id/textView15"
-                android:layout_marginRight="20dp"
-                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:text="Find Bus"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
         </RelativeLayout>
 
@@ -58,11 +58,11 @@
     <android.support.v7.widget.CardView
         android:id="@+id/card2"
         android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/card1"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/card1"
-        android:layout_height="100dp">
+        android:layout_marginTop="10dp">
 
 
         <RelativeLayout
@@ -71,25 +71,25 @@
             android:orientation="vertical" >
 
             <ImageView
+                android:id="@+id/imageView2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:id="@+id/imageView2"
-                android:src="@drawable/gov_logo"
-                android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/gov_logo" />
 
             <TextView
+                android:id="@+id/textView17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Search\nOfficials"
-                android:id="@+id/textView17"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="20dp"
                 android:gravity="center"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:text="Search\nOfficials"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
         </RelativeLayout>
 
@@ -99,11 +99,11 @@
     <android.support.v7.widget.CardView
     android:id="@+id/card3"
     android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/card2"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
-    android:layout_marginTop="10dp"
-    android:layout_below="@+id/card2"
-    android:layout_height="100dp">
+        android:layout_marginTop="10dp">
 
 
     <RelativeLayout
@@ -112,25 +112,25 @@
         android:orientation="vertical" >
 
         <ImageView
+            android:id="@+id/imageView3"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/emrald"
-            android:id="@+id/imageView3"
-            android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/emrald" />
 
         <TextView
+            android:id="@+id/textView16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Complaint\nPortal"
-            android:gravity="center"
-            android:id="@+id/textView16"
-            android:layout_marginRight="20dp"
-            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:text="Complaint\nPortal"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </RelativeLayout>
 

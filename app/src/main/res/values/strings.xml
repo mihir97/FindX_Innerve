@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DigiPune</string>
+    <string name="app_name">Findx</string>
     <string name="FindPeople">Find people</string>
     <string name="MyLocation">My Location</string>
     <string name="GeoFence">GeoFence</string>

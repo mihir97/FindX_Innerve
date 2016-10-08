@@ -2,23 +2,23 @@
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rel2"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@android:color/white"
-    android:orientation="vertical"
-    android:id="@+id/rel2">
+    android:orientation="vertical">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
         android:id="@+id/lin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/button1"
-        android:gravity="center_vertical|center|center_horizontal"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
         android:background="@android:color/white"
-
         android:baselineAligned="false"
+
+        android:gravity="center_vertical|center|center_horizontal"
         android:weightSum="1">
 
 
@@ -26,18 +26,17 @@
             android:id="@+id/scrollView1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:isScrollContainer="false"
+            android:layout_alignParentTop="true"
             android:background="@android:color/white"
-            android:layout_alignParentTop="true" >
+            android:isScrollContainer="false">
 
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:fab="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/rel"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white"
 
-                android:id="@+id/rel">
+                android:background="@android:color/white">
 
 
 
@@ -45,22 +44,22 @@
                     android:id="@+id/fNameLayout"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_alignParentTop="true"
+                    android:layout_alignEnd="@+id/fNameLayout4"
                     android:layout_alignLeft="@+id/fNameLayout4"
-                    android:layout_alignStart="@+id/fNameLayout4"
+                    android:layout_alignParentTop="true"
                     android:layout_alignRight="@+id/fNameLayout4"
-                    android:layout_alignEnd="@+id/fNameLayout4">
+                    android:layout_alignStart="@+id/fNameLayout4"
+                    android:layout_marginTop="10dp">
 
                     <EditText
                         android:id="@+id/editText3"
-                        android:textColor="@color/colorPrimary"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="ID"
+                        android:layout_centerHorizontal="true"
                         android:color="@android:color/white"
+                        android:hint="ID"
                         android:singleLine="true"
-                        android:layout_centerHorizontal="true"/>
+                        android:textColor="@color/colorPrimary" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -72,17 +71,17 @@
                     >
 
                     <EditText
+                        android:id="@+id/editText4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/editText4"
-                        android:text=""
-                        android:textColor="@color/colorPrimary"
-
+                        android:layout_centerHorizontal="true"
                         android:color="@android:color/white"
-                        android:hint="Password"
+
                         android:ems="10"
+                        android:hint="Password"
                         android:singleLine="true"
-                        android:layout_centerHorizontal="true" />
+                        android:text=""
+                        android:textColor="@color/colorPrimary" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -94,17 +93,17 @@
                     >
 
                     <EditText
+                        android:id="@+id/editText1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/editText1"
-                        android:text=""
-                        android:textColor="@color/colorPrimary"
-
-                        android:hint="Name"
+                        android:layout_centerHorizontal="true"
                         android:color="@android:color/white"
+
                         android:ems="10"
+                        android:hint="Name"
                         android:singleLine="true"
-                        android:layout_centerHorizontal="true" />
+                        android:text=""
+                        android:textColor="@color/colorPrimary" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
@@ -116,18 +115,18 @@
                     >
 
                     <EditText
+                        android:id="@+id/editText2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=""
+                        android:layout_centerHorizontal="true"
                         android:color="@android:color/white"
-                        android:id="@+id/editText2"
                         android:ems="10"
-                        android:textColor="@color/colorPrimary"
+                        android:hint="Contact Number"
 
                         android:inputType="phone"
-                        android:hint="Contact Number"
                         android:singleLine="true"
-                        android:layout_centerHorizontal="true" />
+                        android:text=""
+                        android:textColor="@color/colorPrimary" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -141,17 +140,17 @@
                     >
 
                     <EditText
+                        android:id="@+id/editTextEmail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=""
+                        android:layout_centerHorizontal="true"
                         android:color="@android:color/white"
-                        android:id="@+id/editTextEmail"
-                        android:textColor="@color/colorPrimary"
                         android:ems="10"
-                        android:inputType="textEmailAddress"
                         android:hint="Email ID"
+                        android:inputType="textEmailAddress"
                         android:singleLine="true"
-                        android:layout_centerHorizontal="true" />
+                        android:text=""
+                        android:textColor="@color/colorPrimary" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -166,51 +165,51 @@
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Welcome to digiPune"
-        android:layout_marginBottom="10dp"
-        android:textColor="@color/colorPrimaryDark"
-        android:id="@+id/textView"
         android:layout_alignBottom="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
         android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true" />
+        android:text="Welcome to FindX"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorPrimaryDark" />
 
     <TextView
+        android:id="@+id/buttonSkip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Skip"
-        android:id="@+id/buttonSkip"
-        android:layout_margin="5dp"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:text="Skip"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
     <Button
+        android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Login"
-        android:id="@+id/textView5"
-        android:textColor="@android:color/white"
-        android:shadowColor="@android:color/white"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:shadowColor="@android:color/white"
+        android:text="Login"
+        android:textColor="@android:color/white"
         />
 
     <Button
+        android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Sign Up"
-        android:id="@+id/button1"
-        android:textColor="@android:color/white"
-        android:shadowColor="@android:color/white"
         android:layout_above="@+id/textView5"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"/>
+        android:layout_marginRight="15dp"
+        android:shadowColor="@android:color/white"
+        android:text="Sign Up"
+        android:textColor="@android:color/white" />
 
 
 

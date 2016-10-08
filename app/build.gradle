@@ -6,7 +6,7 @@ android {
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        applicationId "in.skylinelabs.digiPune"
+        applicationId "in.skylinelabs.FindX"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1

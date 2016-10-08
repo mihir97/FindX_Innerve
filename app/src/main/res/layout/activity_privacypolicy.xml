@@ -8,22 +8,20 @@
     android:orientation="vertical">
 
 
-
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:fab="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:local="http://schemas.android.com/apk/res-auto"
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
             android:background="@color/colorPrimaryDark"
-            local:theme="@style/ThemeOverlay.AppCompat.Light"
+            android:minHeight="?attr/actionBarSize"
             local:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            local:theme="@style/ThemeOverlay.AppCompat.Light"
             >
 
             <LinearLayout
@@ -36,10 +34,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:padding="5dp"
                     android:text="Privacy Policy"
-                    android:textColor="@android:color/white"
 
-                    android:padding="5dp"/>
+                    android:textColor="@android:color/white" />
 
             </LinearLayout>
 
@@ -48,20 +46,20 @@
 
 
                 <WebView
+                    android:id="@+id/webView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/webView"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_weight="1.06"
                     android:layout_alignParentBottom="true"
-                    android:layout_below="@+id/toolbar" />
+                    android:layout_below="@+id/toolbar"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1.06" />
 
         <ProgressBar
+            android:id="@+id/progressBar1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/progressBar1"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:indeterminate="false" />
 
 
@@ -71,7 +69,7 @@
 
     <fragment
         android:id="@+id/fragment_navigation_drawer"
-        android:name="in.skylinelabs.digiPune.activity.FragmentDrawer"
+        android:name="in.skylinelabs.FindX.activity.FragmentDrawer"
         android:layout_width="@dimen/nav_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"

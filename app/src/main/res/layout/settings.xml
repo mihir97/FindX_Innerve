@@ -26,12 +26,12 @@ android:layout_height="match_parent"
 
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:android1="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rel4"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/toolbar"
-        android:id="@+id/rel4"
 
-        xmlns:android1="http://schemas.android.com/apk/res/android">
+        android:layout_below="@+id/toolbar">
 
 
 
@@ -46,10 +46,10 @@ android:layout_height="match_parent"
                 android1:layout_width="fill_parent"
                 android1:layout_height="240dp"
                 android1:layout_alignParentBottom="true"
-                android1:orientation="vertical"
-                android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android1:orientation="vertical">
 
                 <TextView
                     android1:id="@+id/textView"
@@ -60,8 +60,8 @@ android:layout_height="match_parent"
                     android1:layout_marginLeft="29dp"
                     android1:layout_marginTop="20dp"
                     android1:text="App Settings"
-                    android:textColor="@color/colorPrimary"
                     android1:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/colorPrimary"
                     />
 
                 <TextView
@@ -165,80 +165,80 @@ android:layout_height="match_parent"
                     android1:layout_alignParentRight="true" />
 
                 <View
+                    android:id="@+id/view"
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dp"
-                    android:background="#801565c0"
                     android:layout_below="@+id/textView4"
                     android:layout_margin="10dp"
-                    android:id="@+id/view" />
+                    android:background="#801565c0" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:textColor="@color/colorPrimary"
-                    android:layout_height="wrap_content"
-                    android1:textAppearance="?android:attr/textAppearanceLarge"
-                   android:text="Select Your Category"
                     android:id="@+id/textView13"
-                    android:layout_marginTop="10dp"
-                    android:layout_below="@+id/view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/textView4"
-                    android:layout_alignStart="@+id/textView4" />
+                    android:layout_alignStart="@+id/textView4"
+                    android:layout_below="@+id/view"
+                    android:layout_marginTop="10dp"
+                    android1:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Select Your Category"
+                    android:textColor="@color/colorPrimary" />
 
                 <Spinner
+                    android:id="@+id/spinner"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinner"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/textView13"
                     android:entries="@array/category"
                     android:prompt="@string/cat_prompt"
-                    android:layout_alignTop="@+id/textView13"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
                     />
 
                 <View
+                    android:id="@+id/view2"
                     android:layout_width="fill_parent"
                     android:layout_height="0.5dp"
-                    android:background="#801565c0"
                     android:layout_below="@+id/textView13"
                     android:layout_margin="10dp"
-                    android:id="@+id/view2" />
+                    android:background="#801565c0" />
 
 
                 <TextView
+                    android:id="@+id/textViewSelectLocation"
                     android:layout_width="wrap_content"
-                    android:textColor="@color/colorPrimary"
                     android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView4"
+                    android:layout_alignStart="@+id/textView4"
+                    android:layout_below="@+id/view2"
+                    android:layout_marginTop="10dp"
                     android1:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="Select location"
-                    android:id="@+id/textViewSelectLocation"
-                    android:layout_marginTop="10dp"
-                    android:layout_below="@+id/view2"
-                    android:layout_alignLeft="@+id/textView4"
-                    android:layout_alignStart="@+id/textView4" />
+                    android:textColor="@color/colorPrimary" />
 
 
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android1:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Home location"
                     android:id="@+id/textViewSelectHome"
-                    android:layout_marginTop="10dp"
-                    android:layout_below="@+id/textViewSelectLocation"
-                    android:layout_alignLeft="@+id/textView4"
-                    android:layout_alignStart="@+id/textView4" />
-
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android1:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Work location"
-                    android:id="@+id/textViewSelectWork"
-                    android:layout_marginTop="10dp"
-                    android:layout_below="@+id/textViewSelectHome"
                     android:layout_alignLeft="@+id/textView4"
-                    android:layout_alignStart="@+id/textView4" />
+                    android:layout_alignStart="@+id/textView4"
+                    android:layout_below="@+id/textViewSelectLocation"
+                    android:layout_marginTop="10dp"
+                    android1:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Home location" />
+
+                <TextView
+                    android:id="@+id/textViewSelectWork"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView4"
+                    android:layout_alignStart="@+id/textView4"
+                    android:layout_below="@+id/textViewSelectHome"
+                    android:layout_marginTop="10dp"
+                    android1:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Work location" />
 
 
 
@@ -249,25 +249,25 @@ android:layout_height="match_parent"
             android:id="@+id/redo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="24dp"
+            android:layout_marginRight="24dp"
             android:src="@drawable/ic_action_replay"
             fab:fab_colorNormal="@color/colorPrimary"
             fab:fab_colorPressed="@color/colorPressed"
-            fab:fab_colorRipple="@color/colorRipple"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="24dp"
-            android:layout_marginBottom="24dp" />
+            fab:fab_colorRipple="@color/colorRipple" />
 
         <WebView
+            android:id="@+id/webView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/webView2"
-            android:visibility="gone"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_marginLeft="239dp"
-            android:layout_marginStart="239dp" />
+            android:layout_marginStart="239dp"
+            android:visibility="gone" />
 
     </RelativeLayout>
 
@@ -278,10 +278,10 @@ android:layout_height="match_parent"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"
         android:background="@color/colorPrimaryDark"
-        local:theme="@style/ThemeOverlay.AppCompat.Light"
+        android:minHeight="?attr/actionBarSize"
         local:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        local:theme="@style/ThemeOverlay.AppCompat.Light"
         >
         <LinearLayout
             android:id="@+id/search_container"
@@ -294,10 +294,10 @@ android:layout_height="match_parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:padding="5dp"
                 android:text="Settings"
-                android:textColor="@android:color/white"
 
-                android:padding="5dp"/>
+                android:textColor="@android:color/white" />
 
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
@@ -306,18 +306,18 @@ android:layout_height="match_parent"
 
 
   <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:android1="http://schemas.android.com/apk/res/android"
+      android:id="@+id/rel3"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@+id/toolbar"
-        android:id="@+id/rel3"
-        android:background="@color/colorPrimaryDark"
-        xmlns:android1="http://schemas.android.com/apk/res/android">
+      android:background="@color/colorPrimaryDark">
     </RelativeLayout>
 
 
 <fragment
     android:id="@+id/fragment_navigation_drawer"
-    android:name="in.skylinelabs.digiPune.activity.FragmentDrawer"
+    android:name="in.skylinelabs.FindX.activity.FragmentDrawer"
     android:layout_width="@dimen/nav_drawer_width"
     android:layout_height="match_parent"
     android:layout_gravity="start"

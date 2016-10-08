@@ -15,10 +15,10 @@
         android:orientation="vertical" >
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:android1="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_below="@+id/toolbar"
-            xmlns:android1="http://schemas.android.com/apk/res/android">
+            android:layout_below="@+id/toolbar">
 
 
 
@@ -33,22 +33,22 @@
                     android1:layout_width="fill_parent"
                     android1:layout_height="240dp"
                     android1:layout_alignParentBottom="true"
-                    android1:orientation="vertical"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true">
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android1:orientation="vertical">
 
                     <EditText
                         android:id="@+id/editText1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
+                        android:layout_alignWithParentIfMissing="false"
+                        android:layout_centerHorizontal="true"
                         android:layout_marginTop="75dp"
                         android:ems="10"
-                        android:textColor="#283593"
                         android:singleLine = "true"
-                        android:layout_alignWithParentIfMissing="false"
-                        android:layout_centerHorizontal="true">
+                        android:textColor="#283593">
 
                     </EditText>
 
@@ -60,32 +60,32 @@
                         android:layout_alignLeft="@+id/editText1"
                         android:layout_below="@+id/editText1"
                         android:layout_marginTop="25dp"
-                        android:textColor="#283593"
-                        android:singleLine = "true"
                         android:ems="10"
+                        android:singleLine="true"
+                        android:textColor="#283593"
                         />
 
                     <EditText
                         android:id="@+id/editText3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:singleLine = "true"
                         android:layout_below="@+id/editText2"
-                        android:textColor="#283593"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="25dp"
                         android:ems="10"
+                        android:singleLine="true"
+                        android:textColor="#283593"
                         />
 
                     <EditText
                         android:id="@+id/editText4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#283593"
                         android:layout_below="@+id/editText3"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="25dp"
                         android:ems="10"
+                        android:textColor="#283593"
                        />
 
 
@@ -96,14 +96,14 @@
                 android:id="@+id/button1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="24dp"
+                android:layout_marginRight="24dp"
                 android:src="@drawable/ic_action_accept"
                 fab:fab_colorNormal="@color/colorPrimary"
                 fab:fab_colorPressed="@color/colorPressed"
-                fab:fab_colorRipple="@color/colorRipple"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="24dp"
-                android:layout_marginBottom="24dp" />
+                fab:fab_colorRipple="@color/colorRipple" />
 
 
         </RelativeLayout>
@@ -116,10 +116,10 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
             android:background="@color/colorPrimaryDark"
-            local:theme="@style/ThemeOverlay.AppCompat.Light"
+            android:minHeight="?attr/actionBarSize"
             local:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            local:theme="@style/ThemeOverlay.AppCompat.Light"
             >
             <LinearLayout
                 android:id="@+id/search_container"
@@ -132,10 +132,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:padding="5dp"
                     android:text="Favourites"
-                    android:textColor="@android:color/white"
 
-                    android:padding="5dp"/>
+                    android:textColor="@android:color/white" />
 
             </LinearLayout>
         </android.support.v7.widget.Toolbar>
@@ -145,7 +145,7 @@
 
     <fragment
         android:id="@+id/fragment_navigation_drawer"
-        android:name="in.skylinelabs.digiPune.activity.FragmentDrawer"
+        android:name="in.skylinelabs.FindX.activity.FragmentDrawer"
         android:layout_width="@dimen/nav_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"
